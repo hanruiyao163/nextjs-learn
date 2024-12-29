@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.tabSize": 2, // 设置缩进为2个空格
+  "editor.insertSpaces": true // 使用空格而不是Tab
+}

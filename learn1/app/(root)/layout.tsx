@@ -1,9 +1,10 @@
-function layout({ children }: { children: React.ReactNode }) {
+import NavBar from "@/components/NavBar";
+
+export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <>
-      <h1>(root) layout</h1>
+    <main className="font-work-sans">
+      <NavBar />
       {children}
-    </>
+    </main>
   )
 }
-export default layout
