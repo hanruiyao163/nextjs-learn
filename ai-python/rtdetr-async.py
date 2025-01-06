@@ -1,12 +1,12 @@
 import cv2
 import numpy as np
 import torch
+import asyncio
 
 from transformers import AutoImageProcessor, AutoModelForObjectDetection
 from torch.amp import autocast
 
 device = torch.device("cuda")
-
 
 processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models", use_fast=True)
 
@@ -23,24 +23,25 @@ if not cap.isOpened():
 freq = cv2.getTickFrequency()
 prev_tick = cv2.getTickCount()
 
-while True:
+async def read_frame():
     ret, frame = cap.read()
     if not ret:
         print("Error: Failed to read frame.")
-        break
+        return None
+    return frame
 
-    # 目标检测
+async def infer_frame(frame):
     inputs = processor(images=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), return_tensors="pt").to(device)
     with torch.no_grad():
         with autocast("cuda", dtype=torch.bfloat16):
             outputs = model(**inputs)
+    return outputs
 
-
-    # 处理检测结果
+async def draw_frame(frame, outputs):
+    global prev_tick  # 声明为全局变量
     target_sizes = torch.tensor([frame.shape[:2]])
     results = processor.post_process_object_detection(outputs, target_sizes=target_sizes, threshold=0.5)
 
-    # 绘制检测框
     for result in results:
         for score, label_id, box in zip(result["scores"], result["labels"], result["boxes"]):
             score, label = score.item(), label_id.item()
@@ -52,7 +53,6 @@ while True:
                 frame, f"{label_text}: {score:.2f}", (x1, y1 - 2), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 1
             )
 
-    # 计算FPS
     curr_tick = cv2.getTickCount()
     fps = freq / (curr_tick - prev_tick)
     prev_tick = curr_tick
@@ -60,16 +60,19 @@ while True:
 
     cv2.imshow("RT-DETR Object Detection", frame)
 
-    # 按q退出，s/f调整帧率
-    key = cv2.waitKey(1)
-    if key == ord("q"):
-        break
-    elif key == ord("s"):
-        frame_skip = max(1, frame_skip - 1)
-        print(f"Processing every {frame_skip} frame(s)")
-    elif key == ord("f"):
-        frame_skip += 1
-        print(f"Processing every {frame_skip} frame(s)")
+async def main():
+    while True:
+        frame = await read_frame()
+        if frame is None:
+            break
 
-cap.release()
-cv2.destroyAllWindows()
+        outputs = await infer_frame(frame)
+        await draw_frame(frame, outputs)
+
+        key = cv2.waitKey(1)
+        if key == ord("q"):
+            break
+    cap.release()
+    cv2.destroyAllWindows()
+
+asyncio.run(main())
