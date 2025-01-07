@@ -6,9 +6,9 @@ from transformers import AutoImageProcessor, AutoModelForObjectDetection
 from torch.amp import autocast
 device = torch.device("cuda")
 
-processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models", use_fast=True)
+processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models", use_fast=True)
 
-model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models")
+model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models")
 model.to(device)
 model.eval()
 
@@ -18,8 +18,8 @@ if not cap.isOpened():
     print("Error: Could not open video device")
     exit()
 
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+# cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+# cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 # 性能优化参数
 frame_skip = 1  # 每n帧处理一次

@@ -1,69 +1,81 @@
 import cv2
-import numpy as np
 import torch
 import asyncio
-from concurrent.futures import ThreadPoolExecutor
-from functools import partial
-
 from transformers import AutoImageProcessor, AutoModelForObjectDetection
 from torch.amp import autocast
 
 device = torch.device("cuda")
 
-# 初始化模型
-processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models", use_fast=True)
-model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models")
+processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models", use_fast=True)
+model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models")
 model.to(device)
 model.eval()
 
-# 线程池用于阻塞操作
-executor = ThreadPoolExecutor(max_workers=4)
+cap = cv2.VideoCapture(0)
+if not cap.isOpened():
+    print("Error: Could not open video device")
+    exit()
 
-async def capture_frames(cap, frame_queue):
-    """异步捕获视频帧"""
-    while True:
-        ret, frame = await asyncio.get_event_loop().run_in_executor(
-            executor, cap.read
-        )
-        if not ret:
-            print("Error: Failed to read frame.")
-            break
-        await frame_queue.put(frame)
+# 性能优化参数
+freq = cv2.getTickFrequency()
+prev_tick = cv2.getTickCount()
 
-async def process_frames(frame_queue, result_queue):
-    """异步处理帧"""
-    while True:
-        frame = await frame_queue.get()
-        
-        # 预处理
-        inputs = await asyncio.get_event_loop().run_in_executor(
-            executor,
-            partial(processor, images=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), return_tensors="pt")
-        )
-        inputs = inputs.to(device)
-        
-        # 推理
-        with torch.no_grad():
-            with autocast("cuda", dtype=torch.bfloat16):
-                outputs = await asyncio.get_event_loop().run_in_executor(
-                    executor, partial(model, **inputs)
-                )
-        
-        # 后处理
+stop_event = asyncio.Event()
+
+async def read_frame():
+    ret, frame = cap.read()
+    if not ret:
+        print("Error: Failed to read frame.")
+    return frame
+
+async def detect_objects():
+    frame = await read_frame()
+    inputs = processor(images=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), return_tensors="pt").to(device)
+    with torch.no_grad():
+        with autocast("cuda", dtype=torch.bfloat16):
+            outputs = model(**inputs)
+    return (frame, outputs)
+
+# async def draw_results():
+#     global prev_tick
+#     while not stop_event.is_set():
+#         if not result_queue.empty():
+#             frame, outputs = result_queue.get_nowait()
+#             target_sizes = torch.tensor([frame.shape[:2]])
+#             results = processor.post_process_object_detection(outputs, target_sizes=target_sizes, threshold=0.5)
+
+#             for result in results:
+#                 for score, label_id, box in zip(result["scores"], result["labels"], result["boxes"]):
+#                     score, label = score.item(), label_id.item()
+#                     box = [int(i) for i in box.tolist()]
+#                     x1, y1, x2, y2 = box
+#                     cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
+#                     label_text = model.config.id2label[label]
+#                     cv2.putText(
+#                         frame, f"{label_text}: {score:.2f}", (x1, y1 - 2), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 1
+#                     )
+
+#             curr_tick = cv2.getTickCount()
+#             fps = freq / (curr_tick - prev_tick)
+#             prev_tick = curr_tick
+#             cv2.putText(frame, f"FPS: {fps:.1f}", (10, 30), cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0), 1)
+
+#             cv2.imshow("RT-DETR Object Detection", frame)
+#             if cv2.waitKey(1) == ord("q"):
+#                 stop_event.set()
+
+
+# frame_queue = asyncio.Queue()
+# result_queue = asyncio.Queue()
+
+async def main():
+    global prev_tick
+
+    while not stop_event.is_set():
+        frame, outputs = await detect_objects()
         target_sizes = torch.tensor([frame.shape[:2]])
-        results = await asyncio.get_event_loop().run_in_executor(
-            executor,
-            partial(processor.post_process_object_detection, outputs, target_sizes=target_sizes, threshold=0.5)
-        )
-        
-        await result_queue.put((frame, results))
+        results = processor.post_process_object_detection(outputs, target_sizes=target_sizes, threshold=0.5)
 
-async def display_results(result_queue):
-    """异步显示结果"""
-    while True:
-        frame, results = await result_queue.get()
-        
-        # 绘制检测框
         for result in results:
             for score, label_id, box in zip(result["scores"], result["labels"], result["boxes"]):
                 score, label = score.item(), label_id.item()
@@ -74,45 +86,17 @@ async def display_results(result_queue):
                 cv2.putText(
                     frame, f"{label_text}: {score:.2f}", (x1, y1 - 2), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 1
                 )
-        
-        # 显示帧
-        await asyncio.get_event_loop().run_in_executor(
-            executor, partial(cv2.imshow, "RT-DETR Object Detection", frame)
-        )
-        
-        # 处理按键
-        key = await asyncio.get_event_loop().run_in_executor(
-            executor, partial(cv2.waitKey, 1)
-        )
-        if key == ord("q"):
-            break
 
-async def main():
-    cap = cv2.VideoCapture(0)
-    if not cap.isOpened():
-        print("Error: Could not open video device")
-        return
+        curr_tick = cv2.getTickCount()
+        fps = freq / (curr_tick - prev_tick)
+        prev_tick = curr_tick
+        cv2.putText(frame, f"FPS: {fps:.1f}", (10, 30), cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0), 1)
 
-    # cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-    # cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        cv2.imshow("RT-DETR Object Detection", frame)
+        if cv2.waitKey(1) == ord("q"):
+            stop_event.set()
 
-    # 创建队列
-    frame_queue = asyncio.Queue(maxsize=10)
-    result_queue = asyncio.Queue(maxsize=10)
+asyncio.run(main())
 
-    # 启动任务
-    capture_task = asyncio.create_task(capture_frames(cap, frame_queue))
-    process_task = asyncio.create_task(process_frames(frame_queue, result_queue))
-    display_task = asyncio.create_task(display_results(result_queue))
-
-    # 等待显示任务完成
-    await display_task
-    
-    # 清理
-    capture_task.cancel()
-    process_task.cancel()
-    cap.release()
-    cv2.destroyAllWindows()
-
-if __name__ == "__main__":
-    asyncio.run(main())
+cap.release()
+cv2.destroyAllWindows()

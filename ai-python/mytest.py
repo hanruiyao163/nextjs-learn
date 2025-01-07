@@ -3,11 +3,12 @@ import torch
 import asyncio
 from transformers import AutoImageProcessor, AutoModelForObjectDetection
 from torch.amp import autocast
+from concurrent.futures import ThreadPoolExecutor
 
 device = torch.device("cuda")
 
-processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models", use_fast=True)
-model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models")
+processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models", use_fast=True)
+model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models")
 model.to(device)
 model.eval()
 
@@ -22,32 +23,26 @@ prev_tick = cv2.getTickCount()
 
 stop_event = asyncio.Event()
 
-async def read_frame():
-    while not stop_event.is_set():
-        ret, frame = cap.read()
-        if not ret:
-            print("Error: Failed to read frame.")
-            break
-        await frame_queue.put(frame)
-        print("Frame added to queue")
-        await asyncio.sleep(0.01)
+def read_frame():
+    ret, frame = cap.read()
+    if not ret:
+        print("Error: Failed to read frame.")
+    return frame
 
-async def detect_objects():
-    while not stop_event.is_set():
-        frame = await frame_queue.get()
-        inputs = processor(images=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), return_tensors="pt").to(device)
-        with torch.no_grad():
-            with autocast("cuda", dtype=torch.bfloat16):
-                outputs = model(**inputs)
-        await result_queue.put((frame, outputs))
-        print("Detection results added to queue")
-        await asyncio.sleep(0.01)
+def detect_objects(frame):
+    inputs = processor(images=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), return_tensors="pt").to(device)
+    with torch.no_grad():
+        with autocast("cuda", dtype=torch.bfloat16):
+            outputs = model(**inputs)
+    return (frame, outputs)
 
-async def draw_results():
+async def main():
     global prev_tick
-    while not stop_event.is_set():
-        if not result_queue.empty():
-            frame, outputs = await result_queue.get()
+    loop = asyncio.get_event_loop()
+    with ThreadPoolExecutor() as executor:
+        while not stop_event.is_set():
+            frame = await loop.run_in_executor(executor, read_frame)
+            frame, outputs = await loop.run_in_executor(executor, detect_objects, frame)
             target_sizes = torch.tensor([frame.shape[:2]])
             results = processor.post_process_object_detection(outputs, target_sizes=target_sizes, threshold=0.5)
 
@@ -70,15 +65,6 @@ async def draw_results():
             cv2.imshow("RT-DETR Object Detection", frame)
             if cv2.waitKey(1) == ord("q"):
                 stop_event.set()
-            print("Frame displayed")
-
-
-frame_queue = asyncio.Queue()
-result_queue = asyncio.Queue()
-
-async def main():
-    # 启动异步任务
-    await asyncio.gather(read_frame(), detect_objects(), draw_results())
 
 asyncio.run(main())
 

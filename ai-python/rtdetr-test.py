@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 import torch
 
 from transformers import AutoImageProcessor, AutoModelForObjectDetection
@@ -8,9 +7,9 @@ from torch.amp import autocast
 device = torch.device("cuda")
 
 
-processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models", use_fast=True)
+processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models", use_fast=True)
 
-model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models")
+model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models")
 model.to(device)
 model.eval()
 
@@ -22,26 +21,33 @@ if not cap.isOpened():
 # 性能优化参数
 freq = cv2.getTickFrequency()
 prev_tick = cv2.getTickCount()
+frame_count = 0
+frame_skip = 6
 
-while True:
+
+def read_frame():
     ret, frame = cap.read()
     if not ret:
         print("Error: Failed to read frame.")
-        break
+    return frame
 
-    # 目标检测
+
+def detect_objects(frame):
     inputs = processor(images=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), return_tensors="pt").to(device)
     with torch.no_grad():
         with autocast("cuda", dtype=torch.bfloat16):
             outputs = model(**inputs)
-
-
-    # 处理检测结果
     target_sizes = torch.tensor([frame.shape[:2]])
     results = processor.post_process_object_detection(outputs, target_sizes=target_sizes, threshold=0.5)
+    return results
 
-    # 绘制检测框
+
+def draw_results(frame, results):
+    global prev_tick
     for result in results:
+
+
+        
         for score, label_id, box in zip(result["scores"], result["labels"], result["boxes"]):
             score, label = score.item(), label_id.item()
             box = [int(i) for i in box.tolist()]
@@ -51,8 +57,6 @@ while True:
             cv2.putText(
                 frame, f"{label_text}: {score:.2f}", (x1, y1 - 2), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 1
             )
-
-    # 计算FPS
     curr_tick = cv2.getTickCount()
     fps = freq / (curr_tick - prev_tick)
     prev_tick = curr_tick
@@ -60,16 +64,72 @@ while True:
 
     cv2.imshow("RT-DETR Object Detection", frame)
 
-    # 按q退出，s/f调整帧率
-    key = cv2.waitKey(1)
-    if key == ord("q"):
-        break
-    elif key == ord("s"):
-        frame_skip = max(1, frame_skip - 1)
-        print(f"Processing every {frame_skip} frame(s)")
-    elif key == ord("f"):
-        frame_skip += 1
-        print(f"Processing every {frame_skip} frame(s)")
+
+# while True:
+#     ret, frame = cap.read()
+#     if not ret:
+#         print("Error: Failed to read frame.")
+#         break
+#     frame_count += 1
+#     if (frame_count % frame_skip) != 0:
+#         continue
+
+#     # 目标检测
+#     inputs = processor(images=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), return_tensors="pt").to(device)
+#     with torch.no_grad():
+#         with autocast("cuda", dtype=torch.bfloat16):
+#             outputs = model(**inputs)
+
+
+#     # 处理检测结果
+#     target_sizes = torch.tensor([frame.shape[:2]])
+#     results = processor.post_process_object_detection(outputs, target_sizes=target_sizes, threshold=0.5)
+
+#     # 绘制检测框
+#     for result in results:
+#         for score, label_id, box in zip(result["scores"], result["labels"], result["boxes"]):
+#             score, label = score.item(), label_id.item()
+#             box = [int(i) for i in box.tolist()]
+#             x1, y1, x2, y2 = box
+#             cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
+#             label_text = model.config.id2label[label]
+#             cv2.putText(
+#                 frame, f"{label_text}: {score:.2f}", (x1, y1 - 2), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 1
+#             )
+
+#     # 计算FPS
+#     curr_tick = cv2.getTickCount()
+#     fps = freq / (curr_tick - prev_tick)
+#     prev_tick = curr_tick
+#     cv2.putText(frame, f"FPS: {fps:.1f}", (10, 30), cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0), 1)
+
+#     cv2.imshow("RT-DETR Object Detection", frame)
+
+#     # 按q退出，s/f调整帧率
+#     key = cv2.waitKey(1)
+#     if key == ord("q"):
+#         break
+
+# cap.release()
+# cv2.destroyAllWindows()
+if __name__ == "__main__":
+    while True:
+        frame = read_frame()
+
+        # 跳帧
+        frame_count += 1
+        if (frame_count % frame_skip) != 0:
+            print("Frame skipped")
+            cv2.imshow("RT-DETR Object Detection", frame)
+            continue
+
+        frame_count = 0
+        results = detect_objects(frame)
+        draw_results(frame, results)
+
+        key = cv2.waitKey(1)
+        if key == ord("q"):
+            break
 
 cap.release()
 cv2.destroyAllWindows()
