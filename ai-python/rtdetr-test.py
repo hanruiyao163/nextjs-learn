@@ -22,7 +22,7 @@ if not cap.isOpened():
 freq = cv2.getTickFrequency()
 prev_tick = cv2.getTickCount()
 frame_count = 0
-frame_skip = 6
+frame_skip = 1
 
 
 def read_frame():
@@ -33,6 +33,9 @@ def read_frame():
 
 
 def detect_objects(frame):
+    global prev_tick
+    prev_tick = cv2.getTickCount()
+
     inputs = processor(images=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), return_tensors="pt").to(device)
     with torch.no_grad():
         with autocast("cuda", dtype=torch.bfloat16):
@@ -44,10 +47,8 @@ def detect_objects(frame):
 
 def draw_results(frame, results):
     global prev_tick
+
     for result in results:
-
-
-        
         for score, label_id, box in zip(result["scores"], result["labels"], result["boxes"]):
             score, label = score.item(), label_id.item()
             box = [int(i) for i in box.tolist()]
@@ -55,12 +56,12 @@ def draw_results(frame, results):
             cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
             label_text = model.config.id2label[label]
             cv2.putText(
-                frame, f"{label_text}: {score:.2f}", (x1, y1 - 2), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 1
+                frame, f"{label_text}: {score:.2f}", (x1, y1 - 2), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1
             )
     curr_tick = cv2.getTickCount()
     fps = freq / (curr_tick - prev_tick)
     prev_tick = curr_tick
-    cv2.putText(frame, f"FPS: {fps:.1f}", (10, 30), cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0), 1)
+    cv2.putText(frame, f"FPS: {fps:.1f}", (10, 30), cv2.FONT_HERSHEY_PLAIN, 1 , (0, 255, 0), 1)
 
     cv2.imshow("RT-DETR Object Detection", frame)
 
@@ -119,13 +120,12 @@ if __name__ == "__main__":
         # 跳帧
         frame_count += 1
         if (frame_count % frame_skip) != 0:
-            print("Frame skipped")
             cv2.imshow("RT-DETR Object Detection", frame)
-            continue
-
-        frame_count = 0
-        results = detect_objects(frame)
-        draw_results(frame, results)
+            print("Frame skipped:", frame_count)
+        else:
+            frame_count = 0
+            results = detect_objects(frame)
+            draw_results(frame, results)
 
         key = cv2.waitKey(1)
         if key == ord("q"):

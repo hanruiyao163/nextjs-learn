@@ -7,8 +7,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 device = torch.device("cuda")
 
-processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models", use_fast=True)
-model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r18vd", cache_dir="./hf-models")
+processor = AutoImageProcessor.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models", use_fast=True)
+model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r101vd", cache_dir="./hf-models")
 model.to(device)
 model.eval()
 
@@ -31,7 +31,7 @@ async def read_frame():
             break
         await frame_queue.put(frame)
         print("Frame added to queue")
-        # await asyncio.sleep(0.01)
+        await asyncio.sleep(0.01)
 
 async def detect_objects():
     while not stop_event.is_set():
