@@ -5,7 +5,7 @@ from ultralytics import YOLO
 model = YOLO("yolo11n.pt", verbose=False)
 
 # Open webcam (0 is usually the default camera)
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("rtsp://192.168.1.102/live/zoo1")
 
 # Initialize FPS calculation
 freq = cv2.getTickFrequency()
