@@ -13,7 +13,8 @@ model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r18vd", cach
 model.to(device)
 model.eval()
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("rtsp://192.168.1.102/live/zoo1")
+cap = cv2.VideoCapture("rtsp://192.168.1.102/live/zoo1")
 if not cap.isOpened():
     print("Error: Could not open video device")
     exit()
@@ -44,8 +45,13 @@ def detect_objects(frame):
     results = processor.post_process_object_detection(outputs, target_sizes=target_sizes, threshold=0.5)
     return results
 
-
 def draw_results(frame, results):
+    if not results:
+        return
+    
+    if not results:
+        return
+    
     global prev_tick
 
     for result in results:

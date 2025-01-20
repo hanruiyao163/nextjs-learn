@@ -1,15 +1,27 @@
 import cv2
 from ultralytics import YOLO
+import av
 
 # Load the YOLO model
 model = YOLO("yolo11n.pt", verbose=False)
 
 # Open webcam (0 is usually the default camera)
-cap = cv2.VideoCapture("rtsp://192.168.1.102/live/zoo1")
+cap = cv2.VideoCapture("rtsp://192.168.1.107/live/zoo2")
 
 # Initialize FPS calculation
 freq = cv2.getTickFrequency()
 prev_tick = cv2.getTickCount()
+
+width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = int(cap.get(cv2.CAP_PROP_FPS))
+
+output_container = av.open("rtsp://192.168.1.107/live/zoo-detect", mode="w", format="rtsp")
+stream = output_container.add_stream("h264", rate=fps)  # 使用 H.264 编码
+stream.width = width
+stream.height = height
+stream.pix_fmt = "yuv420p"  # 设置像素格式
+stream.options = {"preset": "ultrafast", "tune": "zerolatency", "rtsp_transport": "tcp",}
 
 while cap.isOpened():
     # Read a frame from the webcam
@@ -34,13 +46,12 @@ while cap.isOpened():
     cv2.putText(annotated_frame, f"FPS: {int(fps)}", (10, 30),
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 1)
 
-    # Display the annotated frame
-    cv2.imshow("YOLO Webcam Inference", annotated_frame)
+    av_frame = av.VideoFrame.from_ndarray(annotated_frame, format="bgr24")
 
-    # Break the loop if 'q' is pressed
-    if cv2.waitKey(1) & 0xFF == ord("q"):
-        break
-
+        # 编码并推送帧
+    for packet in stream.encode(av_frame):
+        output_container.mux(packet)
+    
 # Release the video capture object and close the display window
 cap.release()
-cv2.destroyAllWindows()
+
