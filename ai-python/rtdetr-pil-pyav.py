@@ -63,7 +63,7 @@ output_url = 'rtmp://localhost/live/zoo-detect'
 input_container = av.open(input_url)
 output_container = av.open(output_url, 'w', format='flv')
 input_stream = input_container.streams.video[0]
-output_stream = output_container.add_stream('h264', rate=25)
+output_stream = output_container.add_stream('h264', rate=10)
 output_stream.width = input_stream.width
 output_stream.height = input_stream.height
 output_stream.pix_fmt = 'yuv420p'
@@ -76,11 +76,10 @@ if __name__ == "__main__":
         results = detect_objects(img)
         img = draw_results(img, results)
 
-        img.show()
-        break
+
 
         new_frame = av.VideoFrame.from_image(img)
-        new_frame.pts = frame.pts
+        new_frame.pts = int(frame.pts * 2)
         new_frame.time_base = frame.time_base
 
 
