@@ -16,12 +16,7 @@ model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r18vd", cach
 model.to(device)
 model.eval()
 
-# font = ImageFont.truetype(r"C:\Users\hanma\AppData\Local\Microsoft\Windows\Fonts\MapleMono-NF-CN-Regular.ttf", 24)
 prev_tick = time.perf_counter()
-
-
-def read_frame():
-    pass
 
 
 def detect_objects(frame):
@@ -54,7 +49,7 @@ def draw_results(frame, results):
     fps = 1 / (curr_tick - prev_tick)
     prev_tick = curr_tick
     draw.text((0, 0), f"FPS: {fps:.2f}", fill="green", font_size=30)
-    return frame
+
 
 
 input_url = 'rtmp://localhost/live/zoo'
@@ -63,25 +58,21 @@ output_url = 'rtmp://localhost/live/zoo-detect'
 input_container = av.open(input_url)
 output_container = av.open(output_url, 'w', format='flv')
 input_stream = input_container.streams.video[0]
-output_stream = output_container.add_stream('h264', rate=10)
+output_stream = output_container.add_stream('h264', rate=input_stream.base_rate)
 output_stream.width = input_stream.width
 output_stream.height = input_stream.height
 output_stream.pix_fmt = 'yuv420p'
-
-
 
 if __name__ == "__main__":
     for frame in input_container.decode(input_stream):
         img = frame.to_image()
         results = detect_objects(img)
-        img = draw_results(img, results)
-
-
+        draw_results(img, results)
 
         new_frame = av.VideoFrame.from_image(img)
         new_frame.pts = int(frame.pts * 2)
         new_frame.time_base = frame.time_base
-
+        frame_count = 1
 
         for packet in output_stream.encode(new_frame):
             output_container.mux(packet)
