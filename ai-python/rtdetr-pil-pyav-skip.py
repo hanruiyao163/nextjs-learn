@@ -53,14 +53,19 @@ def draw_results(frame, results):
 
 
 input_url = "rtmp://localhost/live/zoo"
-output_url = "rtmp://localhost/live/zoo-detect"
+output_url = "rtmp://192.168.1.102/live/zoo-detect"
 
 input_container = av.open(input_url)
+
 output_container = av.open(output_url, "w", format="flv")
 input_stream = input_container.streams.video[0]
+# input_stream.width = 640
+# input_stream.height = 480
+
 output_stream = output_container.add_stream("h264", rate=input_stream.base_rate)
 output_stream.width = input_stream.width
 output_stream.height = input_stream.height
+print(input_stream.width, input_stream.height, input_stream.base_rate)
 output_stream.pix_fmt = "yuv420p"
 
 frame_skip = 3
