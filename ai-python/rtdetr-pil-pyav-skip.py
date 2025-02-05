@@ -30,8 +30,6 @@ def detect_objects(frame):
 
 CLASS_COLOR_MAP = {}
 
-# prev_tick = time.perf_counter()
-
 def draw_results(frame, results):
     global prev_tick
     draw = ImageDraw.Draw(frame)
