@@ -15,7 +15,7 @@ model = AutoModelForObjectDetection.from_pretrained("PekingU/rtdetr_r18vd", cach
 model.to(device)
 model.eval()
 
-prev_tick = time.perf_counter()
+
 
 
 def detect_objects(frame):
@@ -30,6 +30,7 @@ def detect_objects(frame):
 
 CLASS_COLOR_MAP = {}
 
+# prev_tick = time.perf_counter()
 
 def draw_results(frame, results):
     global prev_tick
@@ -49,11 +50,11 @@ def draw_results(frame, results):
     curr_tick = time.perf_counter()
     fps = 1 / (curr_tick - prev_tick)
     prev_tick = curr_tick
-    draw.text((0, 0), f"FPS: {fps:.2f}", fill="green", font_size=30)
+    draw.text((0, 0), f"RT-DETR FPS: {fps:05.2f}", fill="black", font_size=30)
 
 
 input_url = "rtmp://localhost/live/zoo"
-output_url = "rtmp://localhost/live/zoo-detect"
+output_url = "rtmp://192.168.253.4/live/zoo-detect"
 
 input_container = av.open(input_url)
 output_container = av.open(output_url, "w", format="flv")
@@ -63,13 +64,16 @@ output_stream.width = input_stream.width
 output_stream.height = input_stream.height
 output_stream.pix_fmt = "yuv420p"
 
-frame_skip = 3
+frame_skip = 2
 frame_count = 0
+
 if __name__ == "__main__":
     for frame in input_container.decode(input_stream):
         if frame_count % frame_skip != 0:
             frame_count += 1
             continue
+
+        prev_tick = time.perf_counter()
 
         img = frame.to_image()
         results = detect_objects(img)
