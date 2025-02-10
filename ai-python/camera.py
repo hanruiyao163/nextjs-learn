@@ -11,19 +11,19 @@ prev_tick = time.perf_counter()
 
 
 # input_url = "rtsp://localhost/live/zoo"
-# output_url = " rtp://127.0.0.1:10000/live/camera"
-output_url = "srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish"
+output_url = " rtp://127.0.0.1:10000/live/camera"
+# output_url = "srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish"
 
 # input_container = av.open(input_url)
 input_container = av.open(
     "video=Iriun Webcam",
     format="dshow",
     options={
-        "rtbufsize": "1024M",  # 增加缓冲区大小
-        "framerate": "30",  # 设置帧率
-        "thread_queue_size": "1024",  # 增加输入队列大小
-        "fflags": "nobuffer",  # 减少输入缓冲
-        "flags": "low_delay",  # 设置低延迟
+        "rtbufsize": "1024M",  
+        "framerate": "30",  
+        "thread_queue_size": "1024",  
+        "fflags": "nobuffer",  
+        "flags": "low_delay",  
     },
 )
 output_container = av.open(

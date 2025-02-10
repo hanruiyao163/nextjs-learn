@@ -6,7 +6,7 @@ def generate_random_color():
     return tuple(np.random.randint(0, 255, size=3))
 
 
-def draw_boxes(draw:ImageDraw, box, label_text, score, color, font="", size=25):
+def draw_boxes(draw:ImageDraw, box, label_text, score, color, font="", size=32):
     # draw = ImageDraw.Draw(image)
 
     font = ImageFont.load_default(size) if not font else ImageFont.truetype(font, size)

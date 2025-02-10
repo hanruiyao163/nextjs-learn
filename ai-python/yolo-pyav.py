@@ -15,10 +15,11 @@ prev_tick = time.perf_counter()
 
 
 input_url = 'rtmp://localhost/live/zoo'
-output_url = 'rtmp://localhost/live/zoo-detect'
+output_url = 'rtmp://localhost/live/zoo-detect-yolo'
 
 input_container = av.open(input_url)
-output_container = av.open(output_url, 'w', format='flv')
+output_container = av.open(output_url, 'w', format='flv', options={
+})
 input_stream = input_container.streams.video[0]
 output_stream = output_container.add_stream('h264', rate=30)
 output_stream.width = input_stream.width
@@ -44,6 +45,7 @@ if __name__ == "__main__":
         new_frame = av.VideoFrame.from_ndarray(new_img, format="rgb24")
         new_frame.pts = frame.pts
         new_frame.time_base = frame.time_base
+        frame = 1
 
 
         for packet in output_stream.encode(new_frame):
