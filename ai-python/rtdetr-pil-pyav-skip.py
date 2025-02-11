@@ -57,11 +57,11 @@ def draw_results(frame, results):
 input_url = "rtmp://localhost/live/zoo"
 output_url = "rtmp://localhost/live/zoo-detect"
 
-# 容器 音频 视频等流的封装 （mkv...)
+# 容器 音频视频等流的封装 （mkv...)
 input_container = av.open(input_url)
 
 # rtmp协议使用flv视频编码格式
-# I B P帧 GOP
+# I B P GOP
 # base64
 output_container = av.open(output_url, "w", format="flv", options={
 # 没啥用
