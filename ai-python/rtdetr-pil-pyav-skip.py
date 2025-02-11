@@ -53,7 +53,7 @@ def draw_results(frame, results):
     prev_tick = curr_tick
     draw.text((0, 0), f"RT-DETR FPS: {fps:05.2f}", fill="black", font_size=30)
 
-
+# 本地推流可以使用localhost 使用loopback
 input_url = "rtmp://localhost/live/zoo"
 output_url = "rtmp://localhost/live/zoo-detect"
 
@@ -61,8 +61,7 @@ output_url = "rtmp://localhost/live/zoo-detect"
 input_container = av.open(input_url)
 
 # rtmp协议使用flv视频编码格式
-# I B P GOP
-# base64
+# I B P GOP 64
 output_container = av.open(output_url, "w", format="flv", options={
 # 没啥用
 })
