@@ -53,7 +53,6 @@ def draw_results(frame, results):
     prev_tick = curr_tick
     draw.text((0, 0), f"RT-DETR FPS: {fps:05.2f}", fill="black", font_size=30)
 
-# 本地推流可以使用localhost 使用loopback
 input_url = "rtmp://localhost/live/zoo"
 output_url = "rtmp://localhost/live/zoo-detect"
 
