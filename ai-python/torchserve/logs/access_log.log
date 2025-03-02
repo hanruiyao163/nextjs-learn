@@ -1,4 +1,0 @@
-2025-03-02T22:18:52,010 - /127.0.0.1:5161 "POST /models?model_name=yolo11n&url=yolo11n.mar&initial_workers=4&batch_size=2 HTTP/1.1" 500 1838
-2025-03-02T22:21:23,681 - /127.0.0.1:5334 "POST /models?model_name=yolov8n&url=yolov8n.mar&initial_workers=4&batch_size=2 HTTP/1.1" 404 1
-2025-03-02T22:21:33,501 - /127.0.0.1:5347 "POST /models?model_name=yolov8n&url=yolov8n.mar&initial_workers=4&batch_size=2 HTTP/1.1" 404 2
-2025-03-02T22:21:44,828 - /127.0.0.1:5360 "POST /models?model_name=yolo11n&url=yolo11n.mar&initial_workers=4&batch_size=2 HTTP/1.1" 500 2631

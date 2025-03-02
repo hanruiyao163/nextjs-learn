@@ -14,3 +14,4 @@ curl -vX PUT "http://localhost:8081/models/yolo11n?min_worker=1"
 
 curl http://127.0.0.1:8080/predictions/yolov8n -T image.png
 
+curl -X POST "localhost:8081/models?model_name=yolo11n&url=yolo11n.mar&initial_workers=1&batch_size=2&runtime=python&device=cpu"
