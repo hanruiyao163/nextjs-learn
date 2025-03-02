@@ -77,7 +77,7 @@ output_stream.width = input_stream.width
 output_stream.height = input_stream.height
 print(input_stream.width, input_stream.height, input_stream.base_rate)
 
-# 像素格式 y-亮度分量 u v-色度分量 4:2:0 的色度子采样格式 比未压缩的 RGB 格式要小得多
+# 像素格式 y-亮度分量 u v-色度分量色度子采样格式 比未压缩的 RGB 格式要小得多
 output_stream.pix_fmt = "yuv420p"
 
 frame_skip = 2

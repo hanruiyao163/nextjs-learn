@@ -1,0 +1,604 @@
+2025-03-02T22:18:19,221 [DEBUG] main org.pytorch.serve.util.ConfigManager - xpu-smi not available or failed: Cannot run program "xpu-smi": CreateProcess error=2, 系统找不到指定的文件。
+2025-03-02T22:18:19,221 [DEBUG] main org.pytorch.serve.util.ConfigManager - xpu-smi not available or failed: Cannot run program "xpu-smi": CreateProcess error=2, 系统找不到指定的文件。
+2025-03-02T22:18:19,224 [WARN ] main org.pytorch.serve.util.ConfigManager - Your torchserve instance can access any URL to load models. When deploying to production, make sure to limit the set of allowed_urls in config.properties
+2025-03-02T22:18:19,224 [WARN ] main org.pytorch.serve.util.ConfigManager - Your torchserve instance can access any URL to load models. When deploying to production, make sure to limit the set of allowed_urls in config.properties
+2025-03-02T22:18:19,243 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager - Initializing plugins manager...
+2025-03-02T22:18:19,243 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager - Initializing plugins manager...
+2025-03-02T22:18:19,283 [INFO ] main org.pytorch.serve.metrics.configuration.MetricConfiguration - Successfully loaded metrics configuration from D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml
+2025-03-02T22:18:19,283 [INFO ] main org.pytorch.serve.metrics.configuration.MetricConfiguration - Successfully loaded metrics configuration from D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml
+2025-03-02T22:18:19,419 [INFO ] main org.pytorch.serve.ModelServer - 
+Torchserve version: 0.12.0
+TS Home: D:\ProgramData\miniforge3\envs\t2\lib\site-packages
+Current directory: D:\Programming\nextjs-learn\ai-python\torchserve
+Temp directory: C:\Users\hanma\AppData\Local\Temp
+Metrics config path: D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml
+Number of GPUs: 1
+Number of CPUs: 32
+Max heap size: 16320 M
+Python executable: D:\ProgramData\miniforge3\envs\t2\python.exe
+Config file: N/A
+Inference address: http://127.0.0.1:8080
+Management address: http://127.0.0.1:8081
+Metrics address: http://127.0.0.1:8082
+Model Store: D:\Programming\nextjs-learn\ai-python\torchserve\model_store
+Initial Models: N/A
+Log dir: D:\Programming\nextjs-learn\ai-python\torchserve\logs
+Metrics dir: D:\Programming\nextjs-learn\ai-python\torchserve\logs
+Netty threads: 0
+Netty client threads: 0
+Default workers per model: 1
+Blacklist Regex: N/A
+Maximum Response Size: 6553500
+Maximum Request Size: 6553500
+Limit Maximum Image Pixels: true
+Prefer direct buffer: false
+Allowed Urls: [file://.*|http(s)?://.*]
+Custom python dependency for model allowed: false
+Enable metrics API: true
+Metrics mode: LOG
+Disable system metrics: false
+Workflow Store: D:\Programming\nextjs-learn\ai-python\torchserve\model_store
+CPP log config: N/A
+Model config: N/A
+System metrics command: default
+Model API enabled: true
+2025-03-02T22:18:19,419 [INFO ] main org.pytorch.serve.ModelServer - 
+Torchserve version: 0.12.0
+TS Home: D:\ProgramData\miniforge3\envs\t2\lib\site-packages
+Current directory: D:\Programming\nextjs-learn\ai-python\torchserve
+Temp directory: C:\Users\hanma\AppData\Local\Temp
+Metrics config path: D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml
+Number of GPUs: 1
+Number of CPUs: 32
+Max heap size: 16320 M
+Python executable: D:\ProgramData\miniforge3\envs\t2\python.exe
+Config file: N/A
+Inference address: http://127.0.0.1:8080
+Management address: http://127.0.0.1:8081
+Metrics address: http://127.0.0.1:8082
+Model Store: D:\Programming\nextjs-learn\ai-python\torchserve\model_store
+Initial Models: N/A
+Log dir: D:\Programming\nextjs-learn\ai-python\torchserve\logs
+Metrics dir: D:\Programming\nextjs-learn\ai-python\torchserve\logs
+Netty threads: 0
+Netty client threads: 0
+Default workers per model: 1
+Blacklist Regex: N/A
+Maximum Response Size: 6553500
+Maximum Request Size: 6553500
+Limit Maximum Image Pixels: true
+Prefer direct buffer: false
+Allowed Urls: [file://.*|http(s)?://.*]
+Custom python dependency for model allowed: false
+Enable metrics API: true
+Metrics mode: LOG
+Disable system metrics: false
+Workflow Store: D:\Programming\nextjs-learn\ai-python\torchserve\model_store
+CPP log config: N/A
+Model config: N/A
+System metrics command: default
+Model API enabled: true
+2025-03-02T22:18:19,424 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager -  Loading snapshot serializer plugin...
+2025-03-02T22:18:19,424 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager -  Loading snapshot serializer plugin...
+2025-03-02T22:18:19,434 [INFO ] main org.pytorch.serve.ModelServer - Initialize Inference server with: NioServerSocketChannel.
+2025-03-02T22:18:19,434 [INFO ] main org.pytorch.serve.ModelServer - Initialize Inference server with: NioServerSocketChannel.
+2025-03-02T22:18:19,488 [INFO ] main org.pytorch.serve.ModelServer - Inference API bind to: http://127.0.0.1:8080
+2025-03-02T22:18:19,488 [INFO ] main org.pytorch.serve.ModelServer - Inference API bind to: http://127.0.0.1:8080
+2025-03-02T22:18:19,488 [INFO ] main org.pytorch.serve.ModelServer - Initialize Management server with: NioServerSocketChannel.
+2025-03-02T22:18:19,488 [INFO ] main org.pytorch.serve.ModelServer - Initialize Management server with: NioServerSocketChannel.
+2025-03-02T22:18:19,489 [INFO ] main org.pytorch.serve.ModelServer - Management API bind to: http://127.0.0.1:8081
+2025-03-02T22:18:19,489 [INFO ] main org.pytorch.serve.ModelServer - Management API bind to: http://127.0.0.1:8081
+2025-03-02T22:18:19,489 [INFO ] main org.pytorch.serve.ModelServer - Initialize Metrics server with: NioServerSocketChannel.
+2025-03-02T22:18:19,489 [INFO ] main org.pytorch.serve.ModelServer - Initialize Metrics server with: NioServerSocketChannel.
+2025-03-02T22:18:19,491 [INFO ] main org.pytorch.serve.ModelServer - Metrics API bind to: http://127.0.0.1:8082
+2025-03-02T22:18:19,491 [INFO ] main org.pytorch.serve.ModelServer - Metrics API bind to: http://127.0.0.1:8082
+2025-03-02T22:18:20,283 [INFO ] pool-3-thread-1 TS_METRICS - CPUUtilization.Percent:0.0|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:20,284 [INFO ] pool-3-thread-1 TS_METRICS - DiskAvailable.Gigabytes:500.7898063659668|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:20,284 [INFO ] pool-3-thread-1 TS_METRICS - DiskUsage.Gigabytes:150.85472106933594|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:20,284 [INFO ] pool-3-thread-1 TS_METRICS - DiskUtilization.Percent:23.1|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:20,285 [INFO ] pool-3-thread-1 TS_METRICS - GPUMemoryUtilization.Percent:23.20468978993649|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:20,285 [INFO ] pool-3-thread-1 TS_METRICS - GPUMemoryUsed.Megabytes:1900.0|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:20,285 [INFO ] pool-3-thread-1 TS_METRICS - GPUUtilization.Percent:0.0|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:20,285 [INFO ] pool-3-thread-1 TS_METRICS - MemoryAvailable.Megabytes:44567.21875|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:20,286 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUsed.Megabytes:20693.2734375|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:20,286 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUtilization.Percent:31.7|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925100
+2025-03-02T22:18:50,270 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelVersionedRefs - Adding new version 1.0 for model yolo11n
+2025-03-02T22:18:50,270 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelVersionedRefs - Adding new version 1.0 for model yolo11n
+2025-03-02T22:18:50,271 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelVersionedRefs - Setting default version to 1.0 for model yolo11n
+2025-03-02T22:18:50,271 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelVersionedRefs - Setting default version to 1.0 for model yolo11n
+2025-03-02T22:18:50,271 [INFO ] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelManager - Model yolo11n loaded.
+2025-03-02T22:18:50,271 [INFO ] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelManager - Model yolo11n loaded.
+2025-03-02T22:18:50,272 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelManager - updateModel: yolo11n, count: 4
+2025-03-02T22:18:50,272 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelManager - updateModel: yolo11n, count: 4
+2025-03-02T22:18:50,277 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9000, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:50,277 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9001, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:50,277 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9000, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:50,277 [DEBUG] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9002, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:50,277 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9001, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:50,278 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9003, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:50,277 [DEBUG] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9002, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:50,278 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9003, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:51,811 [INFO ] W-9000-yolo11n_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2025-03-02T22:18:51,815 [INFO ] W-9000-yolo11n_1.0-stdout MODEL_LOG - Successfully loaded D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml.
+2025-03-02T22:18:51,816 [INFO ] W-9000-yolo11n_1.0-stdout MODEL_LOG - Backend worker process died.
+2025-03-02T22:18:51,816 [INFO ] W-9002-yolo11n_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9002
+2025-03-02T22:18:51,816 [INFO ] W-9000-yolo11n_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2025-03-02T22:18:51,816 [INFO ] W-9000-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 301, in <module>
+2025-03-02T22:18:51,817 [INFO ] W-9000-yolo11n_1.0-stdout MODEL_LOG -     worker.run_server()
+2025-03-02T22:18:51,817 [INFO ] W-9000-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 251, in run_server
+2025-03-02T22:18:51,817 [INFO ] W-9000-yolo11n_1.0-stdout MODEL_LOG -     self.sock.bind((self.sock_name, int(self.port)))
+2025-03-02T22:18:51,817 [INFO ] W-9000-yolo11n_1.0-stdout MODEL_LOG - PermissionError: [WinError 10013] ��һ�ַ���Ȩ�޲�����ķ�ʽ����һ�������׽��ֵĳ��ԡ�
+2025-03-02T22:18:51,820 [INFO ] W-9002-yolo11n_1.0-stdout MODEL_LOG - Successfully loaded D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml.
+2025-03-02T22:18:51,821 [INFO ] W-9002-yolo11n_1.0-stdout MODEL_LOG - Backend worker process died.
+2025-03-02T22:18:51,821 [INFO ] W-9003-yolo11n_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9003
+2025-03-02T22:18:51,821 [INFO ] W-9002-yolo11n_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2025-03-02T22:18:51,821 [INFO ] W-9001-yolo11n_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9001
+2025-03-02T22:18:51,822 [INFO ] W-9002-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 301, in <module>
+2025-03-02T22:18:51,822 [INFO ] W-9002-yolo11n_1.0-stdout MODEL_LOG -     worker.run_server()
+2025-03-02T22:18:51,822 [INFO ] W-9002-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 251, in run_server
+2025-03-02T22:18:51,822 [INFO ] W-9002-yolo11n_1.0-stdout MODEL_LOG -     self.sock.bind((self.sock_name, int(self.port)))
+2025-03-02T22:18:51,823 [INFO ] W-9002-yolo11n_1.0-stdout MODEL_LOG - PermissionError: [WinError 10013] ��һ�ַ���Ȩ�޲�����ķ�ʽ����һ�������׽��ֵĳ��ԡ�
+2025-03-02T22:18:51,826 [INFO ] W-9003-yolo11n_1.0-stdout MODEL_LOG - Successfully loaded D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml.
+2025-03-02T22:18:51,826 [INFO ] W-9001-yolo11n_1.0-stdout MODEL_LOG - Successfully loaded D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml.
+2025-03-02T22:18:51,827 [INFO ] W-9003-yolo11n_1.0-stdout MODEL_LOG - Backend worker process died.
+2025-03-02T22:18:51,827 [INFO ] W-9003-yolo11n_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2025-03-02T22:18:51,827 [INFO ] W-9001-yolo11n_1.0-stdout MODEL_LOG - Backend worker process died.
+2025-03-02T22:18:51,828 [INFO ] W-9003-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 301, in <module>
+2025-03-02T22:18:51,828 [INFO ] W-9001-yolo11n_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2025-03-02T22:18:51,828 [INFO ] W-9003-yolo11n_1.0-stdout MODEL_LOG -     worker.run_server()
+2025-03-02T22:18:51,828 [INFO ] W-9001-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 301, in <module>
+2025-03-02T22:18:51,828 [INFO ] W-9003-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 251, in run_server
+2025-03-02T22:18:51,828 [INFO ] W-9001-yolo11n_1.0-stdout MODEL_LOG -     worker.run_server()
+2025-03-02T22:18:51,828 [INFO ] W-9003-yolo11n_1.0-stdout MODEL_LOG -     self.sock.bind((self.sock_name, int(self.port)))
+2025-03-02T22:18:51,828 [INFO ] W-9003-yolo11n_1.0-stdout MODEL_LOG - PermissionError: [WinError 10013] ��һ�ַ���Ȩ�޲�����ķ�ʽ����һ�������׽��ֵĳ��ԡ�
+2025-03-02T22:18:51,828 [INFO ] W-9001-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 251, in run_server
+2025-03-02T22:18:51,829 [INFO ] W-9001-yolo11n_1.0-stdout MODEL_LOG -     self.sock.bind((self.sock_name, int(self.port)))
+2025-03-02T22:18:51,829 [INFO ] W-9001-yolo11n_1.0-stdout MODEL_LOG - PermissionError: [WinError 10013] ��һ�ַ���Ȩ�޲�����ķ�ʽ����һ�������׽��ֵĳ��ԡ�
+2025-03-02T22:18:51,992 [INFO ] W-9001-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9001-yolo11n_1.0-stdout
+2025-03-02T22:18:51,992 [INFO ] W-9002-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9002-yolo11n_1.0-stderr
+2025-03-02T22:18:51,992 [INFO ] W-9001-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9001-yolo11n_1.0-stderr
+2025-03-02T22:18:51,992 [INFO ] W-9002-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9002-yolo11n_1.0-stdout
+2025-03-02T22:18:51,992 [INFO ] W-9000-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-yolo11n_1.0-stdout
+2025-03-02T22:18:51,992 [INFO ] W-9001-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9001-yolo11n_1.0-stdout
+2025-03-02T22:18:51,992 [INFO ] W-9000-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-yolo11n_1.0-stderr
+2025-03-02T22:18:51,993 [INFO ] W-9003-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9003-yolo11n_1.0-stdout
+2025-03-02T22:18:51,993 [INFO ] W-9003-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9003-yolo11n_1.0-stderr
+2025-03-02T22:18:51,992 [INFO ] W-9000-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-yolo11n_1.0-stdout
+2025-03-02T22:18:51,993 [INFO ] W-9003-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9003-yolo11n_1.0-stdout
+2025-03-02T22:18:51,992 [INFO ] W-9002-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9002-yolo11n_1.0-stderr
+2025-03-02T22:18:51,992 [INFO ] W-9002-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9002-yolo11n_1.0-stdout
+2025-03-02T22:18:51,992 [INFO ] W-9001-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9001-yolo11n_1.0-stderr
+2025-03-02T22:18:51,993 [INFO ] W-9003-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9003-yolo11n_1.0-stderr
+2025-03-02T22:18:51,992 [INFO ] W-9000-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-yolo11n_1.0-stderr
+2025-03-02T22:18:51,993 [ERROR] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:18:51,993 [ERROR] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:18:51,993 [ERROR] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:18:51,993 [ERROR] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:18:51,993 [ERROR] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:18:51,999 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.ModelVersionedRefs - Removed model: yolo11n version: 1.0
+2025-03-02T22:18:51,993 [ERROR] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:18:51,999 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9001-yolo11n_1.0 State change null -> WORKER_STOPPED
+2025-03-02T22:18:51,993 [ERROR] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:18:51,999 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-yolo11n_1.0 State change null -> WORKER_STOPPED
+2025-03-02T22:18:51,999 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9001-yolo11n_1.0 State change null -> WORKER_STOPPED
+2025-03-02T22:18:51,999 [INFO ] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Auto recovery start timestamp: 1740925131999
+2025-03-02T22:18:51,999 [INFO ] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Auto recovery start timestamp: 1740925131999
+2025-03-02T22:18:51,999 [INFO ] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9001 in 1 seconds.
+2025-03-02T22:18:51,999 [INFO ] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9001 in 1 seconds.
+2025-03-02T22:18:51,993 [ERROR] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:18:51,999 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-yolo11n_1.0 State change null -> WORKER_STOPPED
+2025-03-02T22:18:52,000 [INFO ] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Auto recovery start timestamp: 1740925132000
+2025-03-02T22:18:52,000 [DEBUG] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9002-yolo11n_1.0 State change null -> WORKER_STOPPED
+2025-03-02T22:18:51,999 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.ModelVersionedRefs - Removed model: yolo11n version: 1.0
+2025-03-02T22:18:52,000 [INFO ] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Auto recovery start timestamp: 1740925132000
+2025-03-02T22:18:52,000 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9003-yolo11n_1.0 State change null -> WORKER_SCALED_DOWN
+2025-03-02T22:18:52,000 [INFO ] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1 seconds.
+2025-03-02T22:18:52,000 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9003-yolo11n_1.0 State change null -> WORKER_SCALED_DOWN
+2025-03-02T22:18:52,000 [DEBUG] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9002-yolo11n_1.0 State change null -> WORKER_STOPPED
+2025-03-02T22:18:52,000 [INFO ] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1 seconds.
+2025-03-02T22:18:52,000 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9002-yolo11n_1.0 State change null -> WORKER_SCALED_DOWN
+2025-03-02T22:18:52,000 [INFO ] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Auto recovery start timestamp: 1740925132000
+2025-03-02T22:18:52,000 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9002-yolo11n_1.0 State change null -> WORKER_SCALED_DOWN
+2025-03-02T22:18:52,000 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9001-yolo11n_1.0 State change WORKER_STOPPED -> WORKER_SCALED_DOWN
+2025-03-02T22:18:52,000 [INFO ] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Auto recovery start timestamp: 1740925132000
+2025-03-02T22:18:52,000 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9001-yolo11n_1.0 State change WORKER_STOPPED -> WORKER_SCALED_DOWN
+2025-03-02T22:18:52,000 [DEBUG] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:18:52,000 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-yolo11n_1.0 State change WORKER_STOPPED -> WORKER_SCALED_DOWN
+2025-03-02T22:18:52,000 [DEBUG] W-9002-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:18:52,000 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-yolo11n_1.0 State change WORKER_STOPPED -> WORKER_SCALED_DOWN
+2025-03-02T22:18:52,007 [INFO ] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.ModelManager - Model yolo11n unregistered.
+2025-03-02T22:18:52,007 [INFO ] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.ModelManager - Model yolo11n unregistered.
+2025-03-02T22:18:52,008 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9003-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:18:52,008 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9003-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:18:52,008 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:18:52,008 [DEBUG] W-9003-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:18:52,010 [INFO ] nioEventLoopGroup-3-1 ACCESS_LOG - /127.0.0.1:5161 "POST /models?model_name=yolo11n&url=yolo11n.mar&initial_workers=4&batch_size=2 HTTP/1.1" 500 1838
+2025-03-02T22:18:52,010 [INFO ] nioEventLoopGroup-3-1 TS_METRICS - Requests5XX.Count:1.0|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925132
+2025-03-02T22:18:53,012 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9000, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:53,014 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9001, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:53,012 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9000, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:53,014 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9001, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:18:53,016 [ERROR] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Failed start worker process
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:210) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.io.IOException: Cannot run program "D:\ProgramData\miniforge3\envs\t2\python.exe" (in directory "C:\Users\hanma\AppData\Local\Temp\models\3003ace8644a40cfb96dbec5132a778d"): CreateProcess error=267, 目录名称无效。
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1170) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1089) ~[?:?]
+	at java.lang.Runtime.exec(Runtime.java:681) ~[?:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:192) ~[model-server.jar:?]
+	... 6 more
+Caused by: java.io.IOException: CreateProcess error=267, 目录名称无效。
+	at java.lang.ProcessImpl.create(Native Method) ~[?:?]
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:506) ~[?:?]
+	at java.lang.ProcessImpl.start(ProcessImpl.java:159) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1126) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1089) ~[?:?]
+	at java.lang.Runtime.exec(Runtime.java:681) ~[?:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:192) ~[model-server.jar:?]
+	... 6 more
+2025-03-02T22:18:53,017 [ERROR] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Failed start worker process
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:210) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.io.IOException: Cannot run program "D:\ProgramData\miniforge3\envs\t2\python.exe" (in directory "C:\Users\hanma\AppData\Local\Temp\models\3003ace8644a40cfb96dbec5132a778d"): CreateProcess error=267, 目录名称无效。
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1170) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1089) ~[?:?]
+	at java.lang.Runtime.exec(Runtime.java:681) ~[?:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:192) ~[model-server.jar:?]
+	... 6 more
+Caused by: java.io.IOException: CreateProcess error=267, 目录名称无效。
+	at java.lang.ProcessImpl.create(Native Method) ~[?:?]
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:506) ~[?:?]
+	at java.lang.ProcessImpl.start(ProcessImpl.java:159) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1126) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1089) ~[?:?]
+	at java.lang.Runtime.exec(Runtime.java:681) ~[?:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:192) ~[model-server.jar:?]
+	... 6 more
+2025-03-02T22:18:53,016 [ERROR] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Failed start worker process
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:210) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.io.IOException: Cannot run program "D:\ProgramData\miniforge3\envs\t2\python.exe" (in directory "C:\Users\hanma\AppData\Local\Temp\models\3003ace8644a40cfb96dbec5132a778d"): CreateProcess error=267, 目录名称无效。
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1170) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1089) ~[?:?]
+	at java.lang.Runtime.exec(Runtime.java:681) ~[?:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:192) ~[model-server.jar:?]
+	... 6 more
+Caused by: java.io.IOException: CreateProcess error=267, 目录名称无效。
+	at java.lang.ProcessImpl.create(Native Method) ~[?:?]
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:506) ~[?:?]
+	at java.lang.ProcessImpl.start(ProcessImpl.java:159) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1126) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1089) ~[?:?]
+	at java.lang.Runtime.exec(Runtime.java:681) ~[?:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:192) ~[model-server.jar:?]
+	... 6 more
+2025-03-02T22:18:53,017 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:18:53,017 [ERROR] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Failed start worker process
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:210) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.io.IOException: Cannot run program "D:\ProgramData\miniforge3\envs\t2\python.exe" (in directory "C:\Users\hanma\AppData\Local\Temp\models\3003ace8644a40cfb96dbec5132a778d"): CreateProcess error=267, 目录名称无效。
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1170) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1089) ~[?:?]
+	at java.lang.Runtime.exec(Runtime.java:681) ~[?:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:192) ~[model-server.jar:?]
+	... 6 more
+Caused by: java.io.IOException: CreateProcess error=267, 目录名称无效。
+	at java.lang.ProcessImpl.create(Native Method) ~[?:?]
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:506) ~[?:?]
+	at java.lang.ProcessImpl.start(ProcessImpl.java:159) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1126) ~[?:?]
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1089) ~[?:?]
+	at java.lang.Runtime.exec(Runtime.java:681) ~[?:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:192) ~[model-server.jar:?]
+	... 6 more
+2025-03-02T22:18:53,019 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9001-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:18:53,017 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:18:53,019 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:18:53,019 [DEBUG] W-9000-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:18:53,019 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9001-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:18:53,019 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:18:53,019 [DEBUG] W-9001-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:19:20,319 [INFO ] pool-3-thread-1 TS_METRICS - CPUUtilization.Percent:0.0|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:19:20,319 [INFO ] pool-3-thread-1 TS_METRICS - DiskAvailable.Gigabytes:500.7897415161133|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:19:20,319 [INFO ] pool-3-thread-1 TS_METRICS - DiskUsage.Gigabytes:150.85478591918945|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:19:20,320 [INFO ] pool-3-thread-1 TS_METRICS - DiskUtilization.Percent:23.1|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:19:20,320 [INFO ] pool-3-thread-1 TS_METRICS - GPUMemoryUtilization.Percent:23.60771861260381|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:19:20,320 [INFO ] pool-3-thread-1 TS_METRICS - GPUMemoryUsed.Megabytes:1933.0|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:19:20,320 [INFO ] pool-3-thread-1 TS_METRICS - GPUUtilization.Percent:16.0|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:19:20,320 [INFO ] pool-3-thread-1 TS_METRICS - MemoryAvailable.Megabytes:44538.8828125|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:19:20,320 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUsed.Megabytes:20721.546875|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:19:20,320 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUtilization.Percent:31.8|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925160
+2025-03-02T22:20:20,275 [INFO ] pool-3-thread-1 TS_METRICS - CPUUtilization.Percent:0.0|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:20:20,275 [INFO ] pool-3-thread-1 TS_METRICS - DiskAvailable.Gigabytes:500.7897415161133|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:20:20,275 [INFO ] pool-3-thread-1 TS_METRICS - DiskUsage.Gigabytes:150.85478591918945|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:20:20,275 [INFO ] pool-3-thread-1 TS_METRICS - DiskUtilization.Percent:23.1|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:20:20,275 [INFO ] pool-3-thread-1 TS_METRICS - GPUMemoryUtilization.Percent:23.277967757694185|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:20:20,275 [INFO ] pool-3-thread-1 TS_METRICS - GPUMemoryUsed.Megabytes:1906.0|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:20:20,275 [INFO ] pool-3-thread-1 TS_METRICS - GPUUtilization.Percent:0.0|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:20:20,276 [INFO ] pool-3-thread-1 TS_METRICS - MemoryAvailable.Megabytes:44534.671875|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:20:20,276 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUsed.Megabytes:20725.8203125|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:20:20,276 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUtilization.Percent:31.8|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925220
+2025-03-02T22:21:20,269 [INFO ] pool-3-thread-1 TS_METRICS - CPUUtilization.Percent:0.0|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:20,270 [INFO ] pool-3-thread-1 TS_METRICS - DiskAvailable.Gigabytes:500.7897415161133|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:20,271 [INFO ] pool-3-thread-1 TS_METRICS - DiskUsage.Gigabytes:150.85478591918945|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:20,271 [INFO ] pool-3-thread-1 TS_METRICS - DiskUtilization.Percent:23.1|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:20,271 [INFO ] pool-3-thread-1 TS_METRICS - GPUMemoryUtilization.Percent:22.97264289203713|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:20,272 [INFO ] pool-3-thread-1 TS_METRICS - GPUMemoryUsed.Megabytes:1881.0|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:20,272 [INFO ] pool-3-thread-1 TS_METRICS - GPUUtilization.Percent:0.0|#Level:Host,DeviceId:0|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:20,272 [INFO ] pool-3-thread-1 TS_METRICS - MemoryAvailable.Megabytes:44618.265625|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:20,272 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUsed.Megabytes:20642.2265625|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:20,272 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUtilization.Percent:31.6|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925280
+2025-03-02T22:21:23,681 [INFO ] nioEventLoopGroup-3-2 org.pytorch.serve.archive.model.ModelArchive - createTempDir C:\Users\hanma\AppData\Local\Temp\models\4986216c2ba64fb0a2fa17563c0ef16c
+2025-03-02T22:21:23,681 [INFO ] nioEventLoopGroup-3-2 org.pytorch.serve.archive.model.ModelArchive - createTempDir C:\Users\hanma\AppData\Local\Temp\models\4986216c2ba64fb0a2fa17563c0ef16c
+2025-03-02T22:21:23,681 [INFO ] nioEventLoopGroup-3-2 ACCESS_LOG - /127.0.0.1:5334 "POST /models?model_name=yolov8n&url=yolov8n.mar&initial_workers=4&batch_size=2 HTTP/1.1" 404 1
+2025-03-02T22:21:23,682 [INFO ] nioEventLoopGroup-3-2 TS_METRICS - Requests4XX.Count:1.0|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925283
+2025-03-02T22:21:33,500 [INFO ] nioEventLoopGroup-3-3 org.pytorch.serve.archive.model.ModelArchive - createTempDir C:\Users\hanma\AppData\Local\Temp\models\ff336c986fda4e269df61c37ab54a686
+2025-03-02T22:21:33,500 [INFO ] nioEventLoopGroup-3-3 org.pytorch.serve.archive.model.ModelArchive - createTempDir C:\Users\hanma\AppData\Local\Temp\models\ff336c986fda4e269df61c37ab54a686
+2025-03-02T22:21:33,501 [INFO ] nioEventLoopGroup-3-3 ACCESS_LOG - /127.0.0.1:5347 "POST /models?model_name=yolov8n&url=yolov8n.mar&initial_workers=4&batch_size=2 HTTP/1.1" 404 2
+2025-03-02T22:21:33,502 [INFO ] nioEventLoopGroup-3-3 TS_METRICS - Requests4XX.Count:1.0|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925293
+2025-03-02T22:21:42,268 [DEBUG] nioEventLoopGroup-3-4 org.pytorch.serve.wlm.ModelVersionedRefs - Adding new version 1.0 for model yolo11n
+2025-03-02T22:21:42,268 [DEBUG] nioEventLoopGroup-3-4 org.pytorch.serve.wlm.ModelVersionedRefs - Adding new version 1.0 for model yolo11n
+2025-03-02T22:21:42,268 [DEBUG] nioEventLoopGroup-3-4 org.pytorch.serve.wlm.ModelVersionedRefs - Setting default version to 1.0 for model yolo11n
+2025-03-02T22:21:42,268 [DEBUG] nioEventLoopGroup-3-4 org.pytorch.serve.wlm.ModelVersionedRefs - Setting default version to 1.0 for model yolo11n
+2025-03-02T22:21:42,268 [INFO ] nioEventLoopGroup-3-4 org.pytorch.serve.wlm.ModelManager - Model yolo11n loaded.
+2025-03-02T22:21:42,268 [INFO ] nioEventLoopGroup-3-4 org.pytorch.serve.wlm.ModelManager - Model yolo11n loaded.
+2025-03-02T22:21:42,269 [DEBUG] nioEventLoopGroup-3-4 org.pytorch.serve.wlm.ModelManager - updateModel: yolo11n, count: 4
+2025-03-02T22:21:42,269 [DEBUG] nioEventLoopGroup-3-4 org.pytorch.serve.wlm.ModelManager - updateModel: yolo11n, count: 4
+2025-03-02T22:21:42,270 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9004, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:21:42,270 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9005, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:21:42,270 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9004, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:21:42,270 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9005, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:21:42,271 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9007, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:21:42,271 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9007, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:21:42,271 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9006, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:21:42,271 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - Worker cmdline: [D:\ProgramData\miniforge3\envs\t2\python.exe, D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py, --sock-type, tcp, --port, 9006, --metrics-config, D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml]
+2025-03-02T22:21:43,925 [INFO ] W-9007-yolo11n_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9007
+2025-03-02T22:21:43,926 [INFO ] W-9004-yolo11n_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9004
+2025-03-02T22:21:43,929 [INFO ] W-9006-yolo11n_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9006
+2025-03-02T22:21:43,930 [INFO ] W-9007-yolo11n_1.0-stdout MODEL_LOG - Successfully loaded D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml.
+2025-03-02T22:21:43,930 [INFO ] W-9007-yolo11n_1.0-stdout MODEL_LOG - [PID]16688
+2025-03-02T22:21:43,930 [INFO ] W-9005-yolo11n_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9005
+2025-03-02T22:21:43,930 [INFO ] W-9007-yolo11n_1.0-stdout MODEL_LOG - Torch worker started.
+2025-03-02T22:21:43,930 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9007-yolo11n_1.0 State change null -> WORKER_STARTED
+2025-03-02T22:21:43,930 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9007-yolo11n_1.0 State change null -> WORKER_STARTED
+2025-03-02T22:21:43,930 [INFO ] W-9007-yolo11n_1.0-stdout MODEL_LOG - Python runtime: 3.12.7
+2025-03-02T22:21:43,931 [INFO ] W-9004-yolo11n_1.0-stdout MODEL_LOG - Successfully loaded D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml.
+2025-03-02T22:21:43,931 [INFO ] W-9004-yolo11n_1.0-stdout MODEL_LOG - Backend worker process died.
+2025-03-02T22:21:43,932 [INFO ] W-9004-yolo11n_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2025-03-02T22:21:43,932 [INFO ] W-9004-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 301, in <module>
+2025-03-02T22:21:43,932 [INFO ] W-9004-yolo11n_1.0-stdout MODEL_LOG -     worker.run_server()
+2025-03-02T22:21:43,932 [INFO ] W-9004-yolo11n_1.0-stdout MODEL_LOG -   File "D:\ProgramData\miniforge3\envs\t2\lib\site-packages\ts\model_service_worker.py", line 251, in run_server
+2025-03-02T22:21:43,932 [INFO ] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /127.0.0.1:9007
+2025-03-02T22:21:43,932 [INFO ] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /127.0.0.1:9007
+2025-03-02T22:21:43,932 [INFO ] W-9004-yolo11n_1.0-stdout MODEL_LOG -     self.sock.bind((self.sock_name, int(self.port)))
+2025-03-02T22:21:43,932 [INFO ] W-9004-yolo11n_1.0-stdout MODEL_LOG - PermissionError: [WinError 10013] ��һ�ַ���Ȩ�޲�����ķ�ʽ����һ�������׽��ֵĳ��ԡ�
+2025-03-02T22:21:43,932 [INFO ] W-9006-yolo11n_1.0-stdout MODEL_LOG - Successfully loaded D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml.
+2025-03-02T22:21:43,933 [INFO ] W-9006-yolo11n_1.0-stdout MODEL_LOG - [PID]30656
+2025-03-02T22:21:43,933 [INFO ] W-9006-yolo11n_1.0-stdout MODEL_LOG - Torch worker started.
+2025-03-02T22:21:43,933 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9006-yolo11n_1.0 State change null -> WORKER_STARTED
+2025-03-02T22:21:43,933 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9006-yolo11n_1.0 State change null -> WORKER_STARTED
+2025-03-02T22:21:43,933 [INFO ] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /127.0.0.1:9006
+2025-03-02T22:21:43,933 [INFO ] W-9006-yolo11n_1.0-stdout MODEL_LOG - Python runtime: 3.12.7
+2025-03-02T22:21:43,933 [INFO ] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /127.0.0.1:9006
+2025-03-02T22:21:43,934 [INFO ] W-9005-yolo11n_1.0-stdout MODEL_LOG - Successfully loaded D:\ProgramData\miniforge3\envs\t2\lib\site-packages/ts/configs/metrics.yaml.
+2025-03-02T22:21:43,934 [INFO ] W-9005-yolo11n_1.0-stdout MODEL_LOG - [PID]15348
+2025-03-02T22:21:43,934 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9005-yolo11n_1.0 State change null -> WORKER_STARTED
+2025-03-02T22:21:43,934 [INFO ] W-9005-yolo11n_1.0-stdout MODEL_LOG - Torch worker started.
+2025-03-02T22:21:43,934 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9005-yolo11n_1.0 State change null -> WORKER_STARTED
+2025-03-02T22:21:43,935 [INFO ] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /127.0.0.1:9005
+2025-03-02T22:21:43,935 [INFO ] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /127.0.0.1:9005
+2025-03-02T22:21:43,935 [INFO ] W-9005-yolo11n_1.0-stdout MODEL_LOG - Python runtime: 3.12.7
+2025-03-02T22:21:43,937 [INFO ] W-9006-yolo11n_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9006).
+2025-03-02T22:21:43,937 [INFO ] W-9005-yolo11n_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9005).
+2025-03-02T22:21:43,937 [INFO ] W-9007-yolo11n_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9007).
+2025-03-02T22:21:43,940 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Flushing req.cmd LOAD repeats 1 to backend at: 1740925303940
+2025-03-02T22:21:43,940 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Flushing req.cmd LOAD repeats 1 to backend at: 1740925303940
+2025-03-02T22:21:43,940 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Flushing req.cmd LOAD repeats 1 to backend at: 1740925303940
+2025-03-02T22:21:43,940 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Flushing req.cmd LOAD repeats 1 to backend at: 1740925303940
+2025-03-02T22:21:43,940 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Flushing req.cmd LOAD repeats 1 to backend at: 1740925303940
+2025-03-02T22:21:43,940 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Flushing req.cmd LOAD repeats 1 to backend at: 1740925303940
+2025-03-02T22:21:43,941 [INFO ] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Looping backend response at: 1740925303941
+2025-03-02T22:21:43,941 [INFO ] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Looping backend response at: 1740925303941
+2025-03-02T22:21:43,941 [INFO ] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Looping backend response at: 1740925303941
+2025-03-02T22:21:43,941 [INFO ] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Looping backend response at: 1740925303941
+2025-03-02T22:21:43,941 [INFO ] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Looping backend response at: 1740925303941
+2025-03-02T22:21:43,941 [INFO ] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Looping backend response at: 1740925303941
+2025-03-02T22:21:43,950 [INFO ] W-9006-yolo11n_1.0-stdout MODEL_LOG - model_name: yolo11n, batchSize: 2
+2025-03-02T22:21:43,950 [INFO ] W-9005-yolo11n_1.0-stdout MODEL_LOG - model_name: yolo11n, batchSize: 2
+2025-03-02T22:21:43,950 [INFO ] W-9007-yolo11n_1.0-stdout MODEL_LOG - model_name: yolo11n, batchSize: 2
+2025-03-02T22:21:44,064 [INFO ] W-9004-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9004-yolo11n_1.0-stdout
+2025-03-02T22:21:44,064 [INFO ] W-9004-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9004-yolo11n_1.0-stdout
+2025-03-02T22:21:44,064 [INFO ] W-9004-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9004-yolo11n_1.0-stderr
+2025-03-02T22:21:44,064 [ERROR] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:21:44,064 [ERROR] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker error
+org.pytorch.serve.wlm.WorkerInitializationException: Backend stream closed.
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorkerPython(WorkerLifeCycle.java:204) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerLifeCycle.startWorker(WorkerLifeCycle.java:106) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.connect(WorkerThread.java:375) ~[model-server.jar:?]
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:192) ~[model-server.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-03-02T22:21:44,065 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.ModelVersionedRefs - Removed model: yolo11n version: 1.0
+2025-03-02T22:21:44,064 [INFO ] W-9004-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9004-yolo11n_1.0-stderr
+2025-03-02T22:21:44,065 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.ModelVersionedRefs - Removed model: yolo11n version: 1.0
+2025-03-02T22:21:44,065 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9007-yolo11n_1.0 State change WORKER_STARTED -> WORKER_SCALED_DOWN
+2025-03-02T22:21:44,065 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9007-yolo11n_1.0 State change WORKER_STARTED -> WORKER_SCALED_DOWN
+2025-03-02T22:21:44,065 [INFO ] nioEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9007 Worker disconnected. WORKER_SCALED_DOWN
+2025-03-02T22:21:44,066 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_SCALED_DOWN
+2025-03-02T22:21:44,065 [INFO ] nioEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9007 Worker disconnected. WORKER_SCALED_DOWN
+2025-03-02T22:21:44,066 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_SCALED_DOWN
+2025-03-02T22:21:44,066 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Shutting down the thread .. Scaling down.
+2025-03-02T22:21:44,066 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Shutting down the thread .. Scaling down.
+2025-03-02T22:21:44,066 [WARN ] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: yolo11n, error: Worker died.
+2025-03-02T22:21:44,066 [WARN ] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: yolo11n, error: Worker died.
+2025-03-02T22:21:44,066 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9007-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:21:44,066 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9007-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:21:44,066 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:21:44,066 [DEBUG] W-9007-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:21:44,067 [INFO ] W-9007-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9007-yolo11n_1.0-stdout
+2025-03-02T22:21:44,067 [INFO ] W-9007-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9007-yolo11n_1.0-stderr
+2025-03-02T22:21:44,067 [INFO ] W-9007-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9007-yolo11n_1.0-stdout
+2025-03-02T22:21:44,067 [INFO ] W-9007-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9007-yolo11n_1.0-stderr
+2025-03-02T22:21:44,374 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9006-yolo11n_1.0 State change WORKER_STARTED -> WORKER_SCALED_DOWN
+2025-03-02T22:21:44,374 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9006-yolo11n_1.0 State change WORKER_STARTED -> WORKER_SCALED_DOWN
+2025-03-02T22:21:44,375 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_SCALED_DOWN
+2025-03-02T22:21:44,375 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_SCALED_DOWN
+2025-03-02T22:21:44,375 [INFO ] nioEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9006 Worker disconnected. WORKER_SCALED_DOWN
+2025-03-02T22:21:44,375 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Shutting down the thread .. Scaling down.
+2025-03-02T22:21:44,375 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Shutting down the thread .. Scaling down.
+2025-03-02T22:21:44,375 [WARN ] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: yolo11n, error: Worker died.
+2025-03-02T22:21:44,375 [INFO ] nioEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9006 Worker disconnected. WORKER_SCALED_DOWN
+2025-03-02T22:21:44,375 [WARN ] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: yolo11n, error: Worker died.
+2025-03-02T22:21:44,375 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9006-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:21:44,375 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9006-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:21:44,375 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:21:44,375 [DEBUG] W-9006-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:21:44,378 [INFO ] W-9006-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9006-yolo11n_1.0-stdout
+2025-03-02T22:21:44,378 [INFO ] W-9006-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9006-yolo11n_1.0-stderr
+2025-03-02T22:21:44,378 [INFO ] W-9006-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9006-yolo11n_1.0-stdout
+2025-03-02T22:21:44,378 [INFO ] W-9006-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9006-yolo11n_1.0-stderr
+2025-03-02T22:21:44,583 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9005-yolo11n_1.0 State change WORKER_STARTED -> WORKER_SCALED_DOWN
+2025-03-02T22:21:44,583 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9005-yolo11n_1.0 State change WORKER_STARTED -> WORKER_SCALED_DOWN
+2025-03-02T22:21:44,584 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_SCALED_DOWN
+2025-03-02T22:21:44,584 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_SCALED_DOWN
+2025-03-02T22:21:44,584 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Shutting down the thread .. Scaling down.
+2025-03-02T22:21:44,584 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Shutting down the thread .. Scaling down.
+2025-03-02T22:21:44,584 [WARN ] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: yolo11n, error: Worker died.
+2025-03-02T22:21:44,584 [WARN ] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: yolo11n, error: Worker died.
+2025-03-02T22:21:44,584 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9005-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:21:44,584 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9005-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:21:44,584 [INFO ] nioEventLoopGroup-5-3 org.pytorch.serve.wlm.WorkerThread - 9005 Worker disconnected. WORKER_SCALED_DOWN
+2025-03-02T22:21:44,584 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:21:44,584 [DEBUG] W-9005-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:21:44,584 [INFO ] nioEventLoopGroup-5-3 org.pytorch.serve.wlm.WorkerThread - 9005 Worker disconnected. WORKER_SCALED_DOWN
+2025-03-02T22:21:44,586 [INFO ] W-9005-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9005-yolo11n_1.0-stdout
+2025-03-02T22:21:44,586 [INFO ] W-9005-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9005-yolo11n_1.0-stderr
+2025-03-02T22:21:44,586 [INFO ] W-9005-yolo11n_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9005-yolo11n_1.0-stdout
+2025-03-02T22:21:44,586 [INFO ] W-9005-yolo11n_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9005-yolo11n_1.0-stderr
+2025-03-02T22:21:44,824 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9004-yolo11n_1.0 State change null -> WORKER_SCALED_DOWN
+2025-03-02T22:21:44,824 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9004-yolo11n_1.0 State change null -> WORKER_SCALED_DOWN
+2025-03-02T22:21:44,827 [INFO ] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.ModelManager - Model yolo11n unregistered.
+2025-03-02T22:21:44,827 [INFO ] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.ModelManager - Model yolo11n unregistered.
+2025-03-02T22:21:44,827 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9004-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:21:44,827 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - W-9004-yolo11n_1.0 State change WORKER_SCALED_DOWN -> WORKER_STOPPED
+2025-03-02T22:21:44,828 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:21:44,828 [DEBUG] W-9004-yolo11n_1.0 org.pytorch.serve.wlm.WorkerThread - Worker terminated due to scale-down call.
+2025-03-02T22:21:44,828 [INFO ] nioEventLoopGroup-3-4 ACCESS_LOG - /127.0.0.1:5360 "POST /models?model_name=yolo11n&url=yolo11n.mar&initial_workers=4&batch_size=2 HTTP/1.1" 500 2631
+2025-03-02T22:21:44,828 [INFO ] nioEventLoopGroup-3-4 TS_METRICS - Requests5XX.Count:1.0|#Level:Host|#hostname:LAPTOP-PR07FN38,timestamp:1740925304
