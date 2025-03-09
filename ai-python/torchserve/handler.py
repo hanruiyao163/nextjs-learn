@@ -41,4 +41,6 @@ class Yolov8Handler(ObjectDetector):
         return model
 
     def postprocess(self, res):
-        return res[0].tojson()
+        output = []
+        for data in res:
+            output.append(data.tojson())

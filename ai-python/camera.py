@@ -10,7 +10,7 @@ model = YOLO("yolo11n.pt", verbose=False)
 prev_tick = time.perf_counter()
 
 
-output_url = "rtmp://localhost/live/camera"
+output_url = "rtmp://192.168.1.108/live/camera"
 
 input_container = av.open(
     "video=Iriun Webcam",
