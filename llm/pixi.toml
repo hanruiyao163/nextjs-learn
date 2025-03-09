@@ -1,0 +1,27 @@
+[project]
+authors = ["hanruiyao <hanruiyao163@163.com>"]
+channels = ["conda-forge"]
+name = "llm"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+pytorch-gpu = ">=2.6.0,<3"
+jupyter = ">=1.1.1,<2"
+langchain = ">=0.3.20,<0.4"
+langgraph = ">=0.3.5,<0.4"
+numpy = ">=1.26.4,<2"
+seaborn = ">=0.13.2,<0.14"
+pandas = ">=2.2.3,<3"
+pillow = "<11"
+langchain-openai = ">=0.3.8,<0.4"
+langchain-community = ">=0.3.19,<0.4"
+
+
+[system-requirements]
+cuda = "12.0"
+
+[pypi-dependencies]
+marker-pdf = ">=1.6.1, <2"
