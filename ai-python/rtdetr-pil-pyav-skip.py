@@ -1,14 +1,14 @@
-import torch
-from PIL import Image, ImageDraw, ImageFont
-from transformers import AutoImageProcessor, AutoModelForObjectDetection
-from torch.amp import autocast
 import time
 
 # ffmpeg python binding
 import av
+import torch
+from PIL import ImageDraw
+from torch.amp import autocast
+from transformers import AutoImageProcessor, AutoModelForObjectDetection
 
 # 随机颜色 锚框绘制（文字间隔等细节）
-from utils import generate_random_color, draw_boxes  
+from utils import draw_boxes, generate_random_color
 
 device = torch.device("cuda")
 
