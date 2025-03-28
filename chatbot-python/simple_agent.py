@@ -19,17 +19,31 @@ class State(TypedDict):
 
 graph_builder = StateGraph(State)
 
-llm = ChatDeepSeek(model=model, api_key=api_key, api_base=base_url)
+llm = ChatDeepSeek(model=model, api_key=api_key, api_base=base_url, stream_usage=True)
 
 
 def chatbot(state: State):
     return {"messages": [llm.invoke(state["messages"])]}
 
 
-graph_builder.add_node(chatbot)
-graph_builder.add_edge(START, "chatbot")
-graph_builder.add_edge("chatbot", END)
-graph = graph_builder.compile()
+# graph2 = (
+#     graph_builder
+#         .add_node('c1',chatbot)
+#         .add_node('c2',chatbot)
+#         .add_edge(START, "c1")
+#         .add_edge('c1', "c2")
+#         .add_edge("c2", END)
+#         .compile()
+# )
+
+
+graph = (
+    graph_builder
+        .add_node(chatbot)
+        .add_edge(START, "chatbot")
+        .add_edge("chatbot", END)
+        .compile()
+)
 
 
 if __name__ == "__main__":
@@ -41,4 +55,4 @@ if __name__ == "__main__":
     response = llm.invoke(messages)
 
     print(response.additional_kwargs.get("reasoning_content", ""))
-
+    from langchain_core.callbacks import UsageMetadataCallbackHandler
