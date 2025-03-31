@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Stream</title>
+</head>
+
+<body>
+    <h2>Event Stream</h2>
+    <div id="messages"></div>
+    <script>
+        // 创建一个EventSource实例连接到服务器发送的事件流
+        const eventSource = new EventSource('http://127.0.0.1:8000/api/chat');
+
+        // 监听消息事件
+        eventSource.onmessage = function (event) {
+            // 将接收到的数据显示在网页上
+            const messagesDiv = document.getElementById('messages');
+            const message = JSON.parse(event.data); // 假设数据是JSON格式的
+            if (message.finish_reason === 'done')
+                return;
+            messagesDiv.innerHTML += `${message.content}`;
+        };
+
+        eventSource.addEventListener('response_type', function (event) {
+            const messagesDiv = document.getElementById('messages');
+            if (event.data === "reasoning_text")
+                messagesDiv.innerHTML += `<br>Reasoning: ${event.data}<br>`;
+            if (event.data === "text")
+                messagesDiv.innerHTML += `<br>Text: ${event.data}<br>`;
+
+        });
+
+        // 监听错误事件
+        eventSource.onerror = function (error) {
+            console.error("EventSource failed:", error);
+            eventSource.close(); // 关闭连接
+        };
+    </script>
+</body>
