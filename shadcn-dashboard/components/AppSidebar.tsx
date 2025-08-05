@@ -10,6 +10,7 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarSeparator,
@@ -71,11 +72,14 @@ export default function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
+                  {item.title === "Inbox" && (
+                    <SidebarMenuBadge>24</SidebarMenuBadge>
+                  )}
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
