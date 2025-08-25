@@ -7,7 +7,7 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 
 load_dotenv()
-model = os.getenv("MODEL")
+model:str = os.getenv("MODEL")
 api_key = os.getenv("ARK_API_KEY")
 base_url = os.getenv("BASE_URL")
 
@@ -38,7 +38,7 @@ graph = (
 if __name__ == "__main__":
     print(model, api_key, base_url)
     messages = [
-        {"role": "user", "content": "0.11和0.8哪个大？"},
+        {"role": "user", "content": ""},
     ]
     response = llm.invoke(messages)
     print(response)

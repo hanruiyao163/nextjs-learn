@@ -2,3 +2,4 @@ hf-models/
 __pycache__/
 *.pt
 .vscode/
+.idea/
