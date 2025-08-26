@@ -11,7 +11,7 @@ import { SidebarTrigger } from "./ui/sidebar";
 function Navbar() {
   const { setTheme } = useTheme()
   return (
-    <nav className="p-4 flex items-center justify-between bg-amber-200">
+    <nav className="p-4 flex items-center justify-between">
       <SidebarTrigger />
 
 
@@ -26,7 +26,7 @@ function Navbar() {
             </Button>
           </DropdownMenuTrigger>
 
-          
+
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setTheme("light")}>
               Light
