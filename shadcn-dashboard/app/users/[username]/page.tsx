@@ -69,7 +69,7 @@ export default function page() {
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-bold">Phone:</span>
-                <span>john.doe</span>
+                <span>+1234567890</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-bold">Role:</span>
