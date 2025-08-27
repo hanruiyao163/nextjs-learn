@@ -1,5 +1,7 @@
+import AppLineChart from "@/components/AppLineChart";
 import CardList from "@/components/CardList";
 import EditUser from "@/components/EditUser";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -87,9 +89,22 @@ export default function page() {
         {/* right */}
         <div className="w-full xl:w-2/3 space-y-6">
           {/* user card container */}
-          <div className="bg-primary-foreground p-4 rounded-lg">user card</div>
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-4">
+              <Avatar className="size-12">
+                <AvatarImage src={"https://github.com/shadcn.png"} />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
+              <h1 className="text-xl font-semibold">John Doe</h1>
+            </div>
+              <p className="text-sm text-muted-foreground">random description here: <br /> This is a placeholder description for the user profile.</p>
+
+          </div>
           {/* chart container */}
-          <div className="bg-primary-foreground p-4 rounded-lg">chart</div>
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <h1 className="text-xl font-semibold">User Activate</h1>
+            <AppLineChart />
+          </div>
         </div>
       </div>
     </div>
