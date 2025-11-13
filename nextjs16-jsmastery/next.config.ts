@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     turbopackFileSystemCacheForDev: true,
+  },
+  images: {
+    remotePatterns: [
+      {protocol: "https", hostname: "res.cloudinary.com"},
+      {protocol: "https", hostname: "images.unsplash.com"},
+    ]
   }
 };
 
