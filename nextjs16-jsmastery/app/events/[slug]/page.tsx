@@ -10,6 +10,7 @@ export default async function EventDetails({ params }: { params: Promise<{ slug:
   const { event } = await request.json();
 
   if (!event)  return notFound();
+
   return (
     <section id="event">
       <div className="header">
@@ -21,6 +22,13 @@ export default async function EventDetails({ params }: { params: Promise<{ slug:
         {/* left */}
         <div className="content">
           <Image src={event.image} alt="Event Banner" width={800} height={800} className="banner" />
+
+          <section className="flex-col-gap-2">
+          <h2>Overview</h2>
+          <p>{event.overview}</p>
+          </section>
+
+          <section className="flex-col-gap-2"></section>
         </div>
 
 
@@ -35,3 +43,13 @@ export default async function EventDetails({ params }: { params: Promise<{ slug:
     </section>
   );
 }
+
+
+function EventDetailsItem() {
+  
+  return (
+    <></>
+  );
+}
+
+
